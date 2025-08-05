@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiwi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/03d4c4c079.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="photos/BTM.png" class="logo">
+                <ul id="sidemenu">
+                    <i class="fa-solid fa-square-xmark"onclick="closemenu()"></i>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="fa-solid fa-ellipsis-vertical"onclick="openmenu()" ></i>
+            </nav>
+            <div class="header-text">
+                <h1><span>Boluwatiwi Mafikuyomi</span>'s Online Portfolio</h1>
+            </div>
+        </div>
+    </div>
+    <!About!>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="photos/IMG_2241.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About me</h1>
+                    <p>I am an undergraduate Electrical Engineering student at McMaster University, Hamilton Ontario. My main passion involes designing
+                        Printed Circuit Boards. On this website you will find previous projects I have worked on, with links to their
+                        repositries. In my spare time I also design websites (such as this one), and work with microcontrollers to design smart systems.
+                        In the projects section you will see more information on my works. Enjoy!
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')"> Skills</p>
+                        <p class="tab-links"onclick="opentab('experience')"> Experience</p>
+                        <p class="tab-links"onclick="opentab('education')"> Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Altium PCB design</span> <br>Profficiency with library development,Schematic symbol and Footprint creation</li>
+                            <li><span>Web Development</span><br> HTML Javascript CSS MongoDB </li>
+                            <li><span>C++ programming and Circuit design </span><br>Microsystem projects utilizing Arduino and Raspberry pi to design radios for RC car.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Research Assistant</span> <br>Learning Factory McMaster <br></li>
+                            <li><span>Technological Development Team</span> <br>Pathway Pavers<br> </li>
+                            <li><span>Project Manager</span> <br>FlexView</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>McMaster University</span> <br>Bachelor of Engineering, Electrical<br></li>
+                            <li><span>Greensprings School Lagos</span><br>International General Certificate of Education<br> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---proj-->
+    <div id="projects">
+        <div class="container">
+            <h1 class="subtitle">My Projects</h1> 
+        <div class="projects-list">
+            <div>
+                <i class="fa-brands fa-accessible-icon"></i>
+                <h2>FlexView</h2>
+                <p>Designed a durable, portable and maintainable tool that provided our client with a wider range of vision</p>
+                
+                <a href="https://crawling-jackfruit-c27.notion.site/FlexView-5d36ed3403514f67809146b3047b6793" style="text-decoration: underline; cursor:pointer;">Project link</a>
+            </div><div>
+                <i class="fa-solid fa-bell"></i>
+                <h2>ScotiaBuzz</h2>
+                <p>Utilized Tailwind, React.Js and Typescript to design a reactive web platform that aids Scotiabank clients detect fraudulent messages.</p>
+                <a href="https://docs.google.com/presentation/d/1yPyq8ReikScUc-W1N3JWnV_arT1Ote6yT9Fe4HV4QQc/edit?usp=sharing" style="text-decoration: underline; cursor:pointer;">Project link</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-microchip"></i>
+                <h2>Led PCB board</h2>
+                <p>Designed a full PCB board, successfully creating schematic symbols,footprints,PCB stackup, set up layers and generated output files for manufacture (Pick and place, Assembly drawing layers,Gerber, NC Drill and BOM).</p>
+                <a href="https://github.com/mafikb1/LED_PCB" style="text-decoration: underline; cursor:pointer;">Project link</a>
+            </div>
+
+
+        </div></div>
+    </div>
+<!-------contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact Me</h1>
+                <p ><i class="fa-solid fa-envelope"></i>mafikb1@mcmaster.ca</p>
+                <div class="social-icons">
+                    <a href="www.linkedin.com/in/boluwatiwi-mafikuyomi-513374213"><i class="fa-brands fa-linkedin"></i> My Linkedin!</a>
+                </div>
+                <a href="./Tiwi Mafikuyomi Resume.pdf" download class="btn btn2">Download my resume!</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Type your message here!"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        var tablinks= document.getElementsByClassName('tab-links')
+        var tabcontents= document.getElementsByClassName('tab-contents')
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+    <script>
+        var sidemenu=document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwHZiOpFgNkbDcuocCkVaizXBj_Jtdfv_yCOwm-IkA6F9VG5oRdXJ-8WKnIjhXp0sDa/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {msg.innerHTML=""})
+        setTimeout(function(){
+            msg.innerHTML=""
+        },5000)
+        form.reset()
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>
